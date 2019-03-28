@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="true" version="true" 
+    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>TriPosPlugin</name>
+    <js-module name="TriPosPlugin" src="www/TriPosPlugin.js">
+        <clobbers target="TriPosPlugin" />
+    </js-module>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="PayPalMobile">
+                <param name="ios-package" value="TriPOSMobileCordovaPlugin" onload="true" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/TriPosPlugin.h" />
+        <source-file src="src/ios/TriPosPlugin.m" />
+        <source-file src="src/ios/TriPosSDK/triPOSMobileSDK.framework" custom="true" framework="true" />
+        <framework src="Accelerate.framework" />
+        <framework src="AudioToolbox.framework" />
+        <framework src="AVFoundation.framework" />
+        <framework src="CFNetwork.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="CoreLocation.framework" weak="true" />
+        <framework src="CoreMedia.framework" weak="true" />
+        <framework src="CoreVideo.framework"/>
+        <framework src="MessageUI.framework" />
+        <framework src="OpenGLES.framework" />
+        <framework src="MobileCoreServices.framework" />
+        <framework src="Security.framework" />
+        <framework src="SafariServices.framework"/>
+        <framework src="SystemConfiguration.framework" />
+        <framework src="QuartzCore.framework"/>
+        <framework src="UIKit.framework"/>
+
+        <framework src="libc++.dylib" />
+        <framework src="triPOSMobileSDK.framework" />
+    </platform>
+</plugin>
