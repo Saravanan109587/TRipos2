@@ -3,14 +3,14 @@
     xmlns="http://apache.org/cordova/ns/plugins/1.0" 
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>TriPosPlugin</name>
-    <js-module name="TriPosPlugin" src="www/TriPosPlugin.js">
+    <js-module name="TriPosPlugin" src="www/TriPosPlugin.js" name="">
         <clobbers target="TriPosPlugin" />
     </js-module>
 
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="PayPalMobile">
-                <param name="ios-package" value="TriPOSMobileCordovaPlugin" onload="true" />
+            <feature name="TriPosPlugin">
+                <param name="ios-package" value="TriPosPlugin" onload="true" />
             </feature>
         </config-file>
         <header-file src="src/ios/TriPosPlugin.h" />
